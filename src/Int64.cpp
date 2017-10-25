@@ -100,15 +100,15 @@ NAN_METHOD(Int64::New) {
   } else {
     v8::Local<v8::Function> cons = Nan::New<v8::Function>(constructor);
     if (info.Length() == 0) {
-      int argc = 0;
+      const int argc = 0;
       v8::Local<v8::Value> argv[argc] = {};
       info.GetReturnValue().Set(cons->NewInstance(0, argv));
     } else if (info.Length() == 1) {
-      int argc = 1;
+      const int argc = 1;
       v8::Local<v8::Value> argv[argc] = {info[0]};
       info.GetReturnValue().Set(cons->NewInstance(1, argv));
     } else if (info.Length() == 2) {
-      int argc = 2;
+      const int argc = 2;
       v8::Local<v8::Value> argv[argc] = {info[0], info[1]};
       info.GetReturnValue().Set(cons->NewInstance(2, argv));
     }
