@@ -1,5 +1,6 @@
 #ifndef BUILDING_NODE_EXTENSION
 #define BUILDING_NODE_EXTENSION
+#define BUF_SIZE = 0
 #endif
 
 #include <node.h>
@@ -100,7 +101,7 @@ NAN_METHOD(Int64::New) {
   } else {
     v8::Local<v8::Function> cons = Nan::New<v8::Function>(constructor);
     if (info.Length() == 0) {
-      v8::Local<v8::Value> argv[0];
+      v8::Local<v8::Value> argv[BUF_SIZE];
       info.GetReturnValue().Set(cons->NewInstance(0, argv));
     } else if (info.Length() == 1) {
       v8::Local<v8::Value> argv[1] = {info[0]};
