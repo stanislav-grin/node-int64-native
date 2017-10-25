@@ -100,16 +100,13 @@ NAN_METHOD(Int64::New) {
   } else {
     v8::Local<v8::Function> cons = Nan::New<v8::Function>(constructor);
     if (info.Length() == 0) {
-      #define ARGC = 0;
-      v8::Local<v8::Value> argv[ARGC] = {};
+      v8::Local<v8::Value> argv[];
       info.GetReturnValue().Set(cons->NewInstance(0, argv));
     } else if (info.Length() == 1) {
-      #define ARGC = 1;
-      v8::Local<v8::Value> argv[ARGC] = {info[0]};
+      v8::Local<v8::Value> argv[1] = {info[0]};
       info.GetReturnValue().Set(cons->NewInstance(1, argv));
     } else if (info.Length() == 2) {
-      #define ARGC = 2;
-      v8::Local<v8::Value> argv[ARGC] = {info[0], info[1]};
+      v8::Local<v8::Value> argv[2] = {info[0], info[1]};
       info.GetReturnValue().Set(cons->NewInstance(2, argv));
     }
   }
