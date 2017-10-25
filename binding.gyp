@@ -3,8 +3,8 @@
     {
       "target_name": "Int64",
       "sources": [
-        "src/main.cc",
-        "src/Int64.cc"
+        "src/main.cpp",
+        "src/Int64.cpp"
       ],
       "include_dirs" : [
         "<!(node -e \"require('nan')\")"
